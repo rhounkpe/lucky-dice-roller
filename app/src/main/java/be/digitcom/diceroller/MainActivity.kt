@@ -29,8 +29,8 @@ class MainActivity : AppCompatActivity() {
         val diceRoll: Int = dice.roll()
 
         // Update the screen with the dice roll
-        val resultTextView: TextView = findViewById(R.id.resultTextView)
-        resultTextView.text = diceRoll.toString()
+        // val resultTextView: TextView = findViewById(R.id.resultTextView)
+        // resultTextView.text = diceRoll.toString()
 
         // Pop up a message to tell the dice is rolled
         Toast.makeText(this, "Dice rolled!", Toast.LENGTH_SHORT).show()
