@@ -19,16 +19,19 @@ class MainActivity : AppCompatActivity() {
         val rollButton: Button = findViewById(R.id.roll_button)
 
         rollButton.setOnClickListener { rollDice() }
+
+        rollDice()
     }
 
     /**
      * Roll the dice and update the screen with the result.
      */
     private fun rollDice() {
-        // Create a dice object with 6 sides and roll it
+        // Create a new Dice object with 6 sides and roll the dice
         val dice = Dice(6)
         val diceRoll = dice.roll()
 
+        // Find the ImageView in the layout
         val diceImage: ImageView = findViewById(R.id.imageView);
 
         val drawableResource = when (diceRoll) {
@@ -40,7 +43,10 @@ class MainActivity : AppCompatActivity() {
             else -> R.drawable.dice_6
         }
 
+        // Update the ImageView with the correct drawable resource ID
         diceImage.setImageResource(drawableResource)
+
+        // Update the content description
         diceImage.contentDescription = diceRoll.toString()
 
         // Pop up a message to tell the dice is rolled
