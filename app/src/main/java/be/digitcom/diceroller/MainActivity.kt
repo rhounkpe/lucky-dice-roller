@@ -3,6 +3,7 @@ package be.digitcom.diceroller
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 
@@ -28,12 +29,11 @@ class MainActivity : AppCompatActivity() {
         val dice = Dice(6)
         val diceRoll: Int = dice.roll()
 
-        // Update the screen with the dice roll
-        // val resultTextView: TextView = findViewById(R.id.resultTextView)
-        // resultTextView.text = diceRoll.toString()
+        val diceImage: ImageView = findViewById(R.id.imageView);
+        diceImage.setImageResource(R.drawable.dice_2)
 
         // Pop up a message to tell the dice is rolled
-        Toast.makeText(this, "Dice rolled!", Toast.LENGTH_SHORT).show()
+        // Toast.makeText(this, "Dice rolled!", Toast.LENGTH_SHORT).show()
     }
 }
 
